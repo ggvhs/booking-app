@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatDate } from '../../utils/formatDate'
 
 const DoctorAbout = () => {
   return (
@@ -19,37 +20,45 @@ const DoctorAbout = () => {
     </div>
 
     <div className='mt-12'>
-        <h3>education</h3>
+        <h3 className='text-[20px] leading-[30px] text-headingColor font-semibold'>education</h3>
+    
+
+        <ul className='pt-3 md:p-5'>
+            <li className='flex flex-col sm:flex-row sm:justify-between sm:items-end md:gap-5 mb-[30px]'>
+                <div>
+                    <span className='text-irisBlueColor text-[15px] leading-6 font-semibold'>
+                        {formatDate("09-13-2010")} - {formatDate("09-13-2016")}
+                    </span>
+                    <p className='text-[16px] leading-6 font-medium text-textColor'>
+                        PHD in Surgeon
+                    </p>
+                </div>
+                <p className='text-[14px] leading-5 font-medium text-textColor'>
+                New Apollo Hospital
+                </p>
+            </li>
+            <li className='flex flex-col sm:flex-row sm:justify-between sm:items-end md:gap-5 mb-[30px]'>
+                <div>
+                    <span className='text-irisBlueColor text-[15px] leading-6 font-semibold'>
+                        {formatDate("12-04-2010")} - {formatDate("09-13-2016")}
+                    </span>
+                    <p className='text-[16px] leading-6 font-medium text-textColor'>
+                        PHD in Surgeon
+                    </p>
+                </div>
+                <p className='text-[14px] leading-5 font-medium text-textColor'>
+                    New Apollo Hospital
+                </p>
+            </li>
+        </ul>
     </div>
 
-    <ul className='pt-3 md:p-5'>
-        <li className='flex flex-col sm:flex-row sm:justify-between sm:items-end md:gap-5 mb-[30px]'>
-            <div>
-                <span className='text-irisBlueColor text-[15px] leading-6 font-semibold'>
-                    23 June, 2008
-                </span>
-                <p className='text-[16px] leading-6 font-medium text-textColor'>
-                    PHD in Surgeon
-                </p>
-            </div>
-            <p className='text-[14px] leading-5 font-medium text-textColor'>
-                New Apollo Hospital
-            </p>
-        </li>
-        <li className='flex flex-col sm:flex-row sm:justify-between sm:items-end md:gap-5 mb-[30px]'>
-            <div>
-                <span className='text-irisBlueColor text-[15px] leading-6 font-semibold'>
-                    23 June, 2008
-                </span>
-                <p className='text-[16px] leading-6 font-medium text-textColor'>
-                    PHD in Surgeon
-                </p>
-            </div>
-            <p className='text-[14px] leading-5 font-medium text-textColor'>
-                New Apollo Hospital
-            </p>
-        </li>
-    </ul>
+    <div className='mt-12'>
+        <h3 className='text-[20px] leading-[30px] text-headingColor font-semibold'>
+            Experience
+        </h3>
+    </div>
+
 </div>
   )
 }
