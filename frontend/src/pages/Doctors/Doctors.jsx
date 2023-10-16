@@ -1,6 +1,7 @@
 import React from 'react'
 import DoctorCard from './../../components/Doctors/DoctorCard'
 import { doctors } from './../../assets/data/doctors'
+import Testimonial from '../../components/Testimonial/Testimonial'
 
 const Doctors = () => {
   return (
@@ -29,6 +30,20 @@ const Doctors = () => {
 
       </div>
     </section>
+
+    <section>
+        <div className="container">
+          <div className="xl:w-[470] mx-auto">
+            <h2 className="heading text-center">What Our Patients say</h2>
+            <p className="text__para text-center">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              at, saepe iure voluptas illo voluptatum.
+            </p>
+          </div>
+
+          <Testimonial />
+        </div>
+      </section>
     </>
 
     
