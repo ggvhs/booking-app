@@ -42,7 +42,7 @@ app.use(cookieParser())
 app.use(cors(corsOptions))
 app.use('/api/v1/auth', authRoute) //domain/api/v1/auth/register
 app.use('/api/v1/users', userRoute);
-app.use('/api/vi/doctors',doctorRoute)
+app.use('/api/v1/doctors',doctorRoute)
 
 app.listen(port,() =>{
     connectDB();
