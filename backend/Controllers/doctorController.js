@@ -34,7 +34,7 @@ export const deleteDoctor = async (req,res) => {
             .json({
                 success: true,
                 message:"Sccessfully deleted",
-                data:updateDoctor,
+                // data:updateDoctor,
             });
     } catch (err){
         res.status(500).json({success: false, message: "failed to delete"})
@@ -44,7 +44,7 @@ export const getSingleDoctor = async (req,res) => {
     const id = req.params.id;
 
     try{
-        const doctor = await Doctor.findById(id).select("-password");
+        const doctor = await Doctor.findById(id).populate('reviews').select("-password");
 
         res
             .status(200)
@@ -73,7 +73,7 @@ export const getAllDoctor = async (req,res) => {
                 ],
             }).select("-password");
         } else{
-                doctors = await Doctor.find({isApproved: 'approved'}).select(
+                doctors = await Doctor.find({}).select(
                 "-password"
             );
 
