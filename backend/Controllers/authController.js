@@ -63,7 +63,7 @@ export const register = async(req,res) =>{
         
 
     } catch (err) {
-        res.status(200).json({success:false,message:`Internal Server error try again pls :(`})
+        res.status(500).json({success:false,message:`Internal Server error try again pls :(`})
         
     }
 }
