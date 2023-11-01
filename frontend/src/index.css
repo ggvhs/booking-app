@@ -20,28 +20,25 @@
     .heading{
         @apply text-[44px] leading-[54px] font-[700] text-headingColor
     }
-    
-    .text__para{
-        @apply text-[18px] leading-[30px] font-[400] text-textColor mt-[18px]
 
+    .textpara{
+        @apply text-[18px] leading-[30px] font-[400] text-textColor mt-[18px]
     }
 
     .header{
-        @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px]
+        @apply bg-[url("./assets/images/mask.png")] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px]
     }
 
-    .hero__section{
-        @apply bg-[url('./assets/images/hero-bg.png')] bg-no-repeat bg-center bg-cover;
+    .herosection {
+        @apply bg-[url("./assets/images/hero-bg.png")] bg-no-repeat bg-center bg-cover
     }
 
-    .form__label{
-        @apply text-textColor font-semibold text-[16px] leading-7 mb-2
+    .formlabel {
+        @apply text-textColor font-semibold text-[16px] leading-7 mb-2;
     }
 
-    .form__input {
-        @apply w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none 
-        focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor
-        cursor-pointer rounded-md;
+    .forminput {
+        @apply w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer rounded-md;
     }
 }
 
@@ -60,7 +57,7 @@
         @apply text-[26px] leading-[36px];
     }
 
-    .text__para {
+    .textpara {
         @apply text-[16px] leading-7 mt-3;
     }
 }

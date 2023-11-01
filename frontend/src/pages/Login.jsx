@@ -1,42 +1,39 @@
-import React from 'react'
 import { useState, useContext } from 'react'
 import {Link , useNavigate} from 'react-router-dom'
 import { BASE_URL } from '../config'
-import {AuthContext} from '../context/AuthContext.jsx'
 import { toast } from 'react-toastify'
+import { AuthenticateContext} from '../context/AuthenticateContext.jsx'
 
 const Login = () => {
-
   const [formData, setFormData] = useState({
     email:'',
     password:''
   })
 
-  // USE SATE FOR LOADING LOGIN 
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const {dispatch} = useContext(AuthContext)
+  const {dispatch} = useContext(AuthenticateContext)
 
   const handleInputChange = e => {
     setFormData({ ... formData, [e.target.name]: e.target.value})
   }
 
   const submitHandler = async event => {
-    event.preventDefault()
+    event.preventDefault();
     setLoading(true)
-    // console.log(formData)
 
     try {
-      const res = await fetch(`${BASE_URL}/auth/login`,
-        {
-          method: "post",
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        })
+      const res = await fetch(`${BASE_URL}/auth/login`,{
+        method:'post',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
 
       const result = await res.json()
 
-      if (!res.ok) {
+      if(!res.ok){
         throw new Error(result.message)
       }
 
@@ -44,12 +41,12 @@ const Login = () => {
         type:'LOGIN_SUCCESS',
         payload: {
           user: result.data,
-          toekn: result.token,
-          role: result.role,
-        }
-      })
+          token: result.token,
+          role: result.role
+        },
+      });
 
-      console.log(result,"login data")
+      console.log(result, 'login data')
 
       setLoading(false)
       toast.success(result.message)
@@ -60,6 +57,7 @@ const Login = () => {
       setLoading(false)
     }
   }
+
 
   return (
     <section className='px-5 lg:px-0'>
