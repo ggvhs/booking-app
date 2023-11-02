@@ -73,9 +73,9 @@ const Login = () => {
               name='email' 
               value={formData.email}
               onChange={handleInputChange}
-              className='w-ffull py-3 border-b border-splid border-[#0066ff61] focus:outline-none
+              className='w-full py-3 border-b border-splid border-[#0066ff61] focus:outline-none
               focus:border-b-primaryColor text-[16px] leading-7 text-headingColor
-              paceholder:text-textColor rounded-md cursor-pointer'
+              paceholder:text-textColor rounded-md cursor-pointer '
               required 
             />
           </div>
@@ -87,7 +87,7 @@ const Login = () => {
               name='password' 
               value={formData.password}
               onChange={handleInputChange}
-              className='w-ffull py-3 border-b border-splid border-[#0066ff61] focus:outline-none
+              className='w-full py-3 border-b border-splid border-[#0066ff61] focus:outline-none
               focus:border-b-primaryColor text-[16px] leading-7 text-headingColor
               paceholder:text-textColor rounded-md cursor-pointer'
               required 
