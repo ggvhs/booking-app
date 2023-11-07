@@ -36,7 +36,6 @@ export const deleteUser = async (req,res) => {
             .json({
                 success: true,
                 message:"Sccessfully deleted",
-                data:updateUser,
             });
     } catch (err){
         res.status(500).json({success: false, message: "failed to delete"})
@@ -114,7 +113,7 @@ export const getMyAppointments = async(req,res)=>{
         const doctorIds = bookings.map(el=>el.doctor.id)
 
         // STEP 3: retrieve doctors using doctor ids
-        const doctors = await Doctor.find({_id: {$id:doctorIds}}).select('-password')
+        const doctors = await Doctor.find({_id: {$in:doctorIds}}).select('-password')
 
         res.status(200).json({success:true, message:'Appointments are getting ', data: doctors})
         
